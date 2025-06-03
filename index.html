@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlaqMerchandise | OTP Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      width: 90%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 30px;
+        max-width: 350px;
+      }
+      .logo {
+        width: 80px;
+      }
+      .brand {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="images/logo.jpg.jpg" alt="BlaqMerchandise Logo" class="logo">
+
+    <div class="brand">BlaqMerchandise</div>
+    <h2>Secure OTP Login</h2>
+    <p>Enter your phone number below.</p>
+    <form action="send_otp.php" method="POST">
+      <label for="countryCode">Select Country Code:</label>
+      <select name="countryCode" required>
+        <option value="+1">🇺🇸 +1 (USA)</option>
+        <option value="+44">🇬🇧 +44 (UK)</option>
+        <option value="+91">🇮🇳 +91 (India)</option>
+        <option value="+81">🇯🇵 +81 (Japan)</option>
+        <option value="+49">🇩🇪 +49 (Germany)</option>
+      </select>
+      <input type="tel" name="phoneNumber" placeholder="Enter your phone number" required>
+      <button type="submit">Send OTP</button>
+    </form>
+    <div class="footer">BlaqMerchandise &copy; 2025 • All rights reserved</div>
+  </div>
+</body>
+</html>
